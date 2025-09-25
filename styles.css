@@ -1,0 +1,873 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: #2c2c2c;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navigation */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #8b4513;
+}
+
+.om-symbol {
+    font-size: 1.8rem;
+    color: #d4af37;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #2c2c2c;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav-link:hover {
+    color: #8b4513;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #d4af37;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background: #2c2c2c;
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+/* Hero Section */
+.hero {
+    padding: 120px 0 80px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 50%, #dee2e6 100%);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="0.5" fill="%23d4af37" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+    opacity: 0.3;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.ashtami-notice {
+    background: rgba(212, 175, 55, 0.1);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 10px;
+    padding: 15px 25px;
+    margin-bottom: 40px;
+    display: inline-block;
+    font-size: 0.9rem;
+    color: #8b4513;
+}
+
+.hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    font-weight: 700;
+    color: #8b4513;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    letter-spacing: 2px;
+}
+
+.hero-subtitle h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #2c2c2c;
+    margin-bottom: 30px;
+    line-height: 1.4;
+    font-style: italic;
+}
+
+.hero-description {
+    text-align: left;
+    max-width: 800px;
+    margin: 0 auto 40px;
+}
+
+.hero-description p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    color: #4a4a4a;
+    line-height: 1.8;
+}
+
+.blessing {
+    background: rgba(139, 69, 19, 0.05);
+    border-left: 4px solid #d4af37;
+    padding: 25px;
+    border-radius: 0 10px 10px 0;
+    margin-top: 40px;
+}
+
+.blessing p {
+    font-size: 1.2rem;
+    color: #8b4513;
+    font-style: italic;
+    margin: 0;
+}
+
+/* Begin Section */
+.begin-section {
+    padding: 80px 0;
+    background: #ffffff;
+}
+
+.begin-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    text-align: center;
+    color: #8b4513;
+    margin-bottom: 50px;
+}
+
+.begin-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.begin-content p {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    color: #4a4a4a;
+    line-height: 1.8;
+}
+
+.sadhana-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin: 40px 0;
+}
+
+.info-card {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.info-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: #8b4513;
+    margin-bottom: 15px;
+}
+
+.info-card p {
+    color: #4a4a4a;
+    margin: 0;
+}
+
+.progression {
+    background: rgba(139, 69, 19, 0.05);
+    padding: 30px;
+    border-radius: 15px;
+    margin-top: 40px;
+}
+
+.progression p {
+    margin-bottom: 15px;
+    color: #4a4a4a;
+}
+
+/* Sadhana Section */
+.sadhana-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.sadhana-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    text-align: center;
+    color: #8b4513;
+    margin-bottom: 60px;
+}
+
+.sadhana-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.step-card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.step-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #d4af37, #8b4513);
+}
+
+.step-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.step-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.step-header h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: #8b4513;
+    margin: 0;
+}
+
+.step-symbol {
+    font-size: 2rem;
+    color: #d4af37;
+}
+
+.step-card h4 {
+    font-size: 1.3rem;
+    color: #2c2c2c;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.step-content p {
+    margin-bottom: 15px;
+    color: #4a4a4a;
+    line-height: 1.7;
+}
+
+.step-content .note {
+    background: rgba(212, 175, 55, 0.1);
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 3px solid #d4af37;
+    font-style: italic;
+    color: #8b4513;
+}
+
+.duration {
+    background: rgba(139, 69, 19, 0.1);
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+    text-align: center;
+    font-weight: 600;
+    color: #8b4513;
+}
+
+.caution {
+    background: linear-gradient(135deg, #fff5f5 0%, #fed7d7 100%);
+    border: 2px solid #f56565;
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.caution h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: #c53030;
+    margin-bottom: 15px;
+}
+
+.caution h4 {
+    font-size: 1.5rem;
+    color: #e53e3e;
+    margin-bottom: 25px;
+    font-style: italic;
+}
+
+.caution p {
+    font-size: 1.1rem;
+    color: #4a4a4a;
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+/* About Section */
+.about-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.about-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    text-align: center;
+    color: #8b4513;
+    margin-bottom: 50px;
+}
+
+.about-content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    color: #4a4a4a;
+    line-height: 1.8;
+    text-align: center;
+}
+
+.about-principles {
+    margin: 50px 0;
+}
+
+.about-principles h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    text-align: center;
+    color: #8b4513;
+    margin-bottom: 40px;
+}
+
+.principles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.principle-card {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.principle-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.principle-card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: #8b4513;
+    margin-bottom: 15px;
+}
+
+.principle-card p {
+    color: #4a4a4a;
+    margin: 0;
+    font-size: 1rem;
+}
+
+.about-guidance {
+    background: rgba(139, 69, 19, 0.05);
+    padding: 40px;
+    border-radius: 15px;
+    border-left: 4px solid #d4af37;
+    margin-top: 40px;
+}
+
+.about-guidance h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: #8b4513;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.about-guidance p {
+    text-align: left;
+    color: #4a4a4a;
+    margin-bottom: 15px;
+}
+
+/* Devi Section */
+.devi-section {
+    padding: 80px 0;
+    background: #ffffff;
+}
+
+.devi-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    text-align: center;
+    color: #8b4513;
+    margin-bottom: 50px;
+}
+
+.devi-content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.devi-intro p {
+    font-size: 1.2rem;
+    text-align: center;
+    color: #4a4a4a;
+    margin-bottom: 50px;
+    line-height: 1.8;
+    font-style: italic;
+}
+
+.devi-aspects h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    text-align: center;
+    color: #8b4513;
+    margin-bottom: 40px;
+}
+
+.aspects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.aspect-card {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.aspect-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #d4af37, #8b4513);
+}
+
+.aspect-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.aspect-card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    color: #8b4513;
+    margin-bottom: 15px;
+}
+
+.aspect-card p {
+    color: #4a4a4a;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.devi-practice {
+    background: rgba(139, 69, 19, 0.05);
+    padding: 40px;
+    border-radius: 15px;
+    margin: 50px 0;
+}
+
+.devi-practice h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: #8b4513;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.devi-practice p {
+    text-align: center;
+    color: #4a4a4a;
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+}
+
+.practice-elements {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 25px;
+}
+
+.practice-item {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.practice-item h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    color: #8b4513;
+    margin-bottom: 10px;
+}
+
+.practice-item p {
+    color: #4a4a4a;
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.devi-blessing {
+    background: linear-gradient(135deg, #fff5f5 0%, #fed7d7 100%);
+    border: 2px solid #f56565;
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.devi-blessing p {
+    font-size: 1.1rem;
+    color: #8b4513;
+    font-style: italic;
+    margin: 0;
+    line-height: 1.8;
+}
+
+/* Rudraksha Section */
+.rudraksha-section {
+    padding: 80px 0;
+    background: #ffffff;
+}
+
+.rudraksha-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    text-align: center;
+    color: #8b4513;
+    margin-bottom: 20px;
+}
+
+.rudraksha-section h3 {
+    font-size: 1.8rem;
+    text-align: center;
+    color: #2c2c2c;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.rudraksha-intro {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #8b4513;
+    font-weight: 600;
+    margin-bottom: 40px;
+}
+
+.rudraksha-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.rudraksha-content p {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    color: #4a4a4a;
+    line-height: 1.8;
+}
+
+.rudraksha-stages {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin: 40px 0;
+}
+
+.rudraksha-card {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.rudraksha-card:hover {
+    transform: translateY(-5px);
+}
+
+.rudraksha-card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: #8b4513;
+    margin-bottom: 15px;
+}
+
+.rudraksha-card p {
+    color: #4a4a4a;
+    margin: 0;
+}
+
+.rudraksha-note {
+    background: rgba(139, 69, 19, 0.05);
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 4px solid #d4af37;
+    font-style: italic;
+    color: #8b4513;
+}
+
+.rudraksha-conclusion {
+    background: rgba(212, 175, 55, 0.1);
+    padding: 30px;
+    border-radius: 15px;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.rudraksha-conclusion p {
+    font-size: 1.2rem;
+    color: #8b4513;
+    font-style: italic;
+    margin: 0;
+}
+
+/* Footer */
+.footer {
+    background: #2c2c2c;
+    color: #ffffff;
+    text-align: center;
+    padding: 30px 0;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+    
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background-color: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+        padding: 20px 0;
+    }
+    
+    .nav-menu.active {
+        left: 0;
+    }
+    
+    .nav-menu a {
+        margin: 10px 0;
+        font-size: 1.1rem;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle h2 {
+        font-size: 1.4rem;
+    }
+    
+    .hero-description p {
+        font-size: 1rem;
+    }
+    
+    .sadhana-steps {
+        grid-template-columns: 1fr;
+    }
+    
+    .step-card {
+        padding: 30px 20px;
+    }
+    
+    .rudraksha-stages {
+        grid-template-columns: 1fr;
+    }
+    
+    .sadhana-info {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle h2 {
+        font-size: 1.2rem;
+    }
+    
+    .step-card {
+        padding: 20px 15px;
+    }
+    
+    .step-header h3 {
+        font-size: 1.5rem;
+    }
+    
+    .caution {
+        padding: 30px 20px;
+    }
+    
+    .caution h3 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-content > * {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.hero-content > *:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.hero-content > *:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.hero-content > *:nth-child(4) {
+    animation-delay: 0.6s;
+}
+
+.hero-content > *:nth-child(5) {
+    animation-delay: 0.8s;
+}
+
+/* Smooth scrolling enhancement */
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        scroll-behavior: smooth;
+    }
+}
